@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #1f1f11;" />
-      <AnchorPane prefHeight="400.0" prefWidth="310.0">
+      <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #1f1f11;">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="241.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../resources/bk.jpg" />
+               </image></ImageView>
+         </children></AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="418.0">
          <children>
             <Label layoutX="82.0" layoutY="21.0" prefHeight="40.0" prefWidth="111.0" text="BOOKING MASTERS" textFill="#bf1b1b" />
             <TextField layoutX="84.0" layoutY="100.0" prefHeight="0.0" prefWidth="111.0" />
+            <Label layoutX="110.0" layoutY="74.0" text="Num aluno" />
          </children></AnchorPane>
    </children>
 </HBox>
