@@ -10,6 +10,7 @@
          <children>
             <Label layoutX="82.0" layoutY="21.0" prefHeight="40.0" prefWidth="111.0" text="BOOKING MASTERS" textFill="#bf1b1b" />
             <TextField layoutX="84.0" layoutY="100.0" prefHeight="0.0" prefWidth="111.0" />
+            <Label layoutX="110.0" layoutY="74.0" text="Num aluno" />
          </children></AnchorPane>
    </children>
 </HBox>
