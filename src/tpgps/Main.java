@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
+
+// 1 controlador e uma view para cada menu (CASO DE USO)
+
 public class Main extends Application {
 
     @Override
