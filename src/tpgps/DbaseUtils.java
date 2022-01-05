@@ -12,11 +12,15 @@ import tpgps.model.User;
 import java.io.IOException;
 
 public class DbaseUtils {
+
+    public static User aluno = null;
+    public static  User getAlumni(){ return aluno; }
+
     public static void logInUser(ActionEvent event, String numAl, String passAl) {
         System.out.println("login pressed");
 
         // ler ficheiro de texto com users e pass
-        User aluno  = findUser(numAl);
+        aluno  = findUser(numAl);
         String userPass;
 
         if( aluno == null){
