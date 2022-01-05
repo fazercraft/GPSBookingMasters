@@ -8,16 +8,16 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tpgps.controllers.LogInController">
    <AnchorPane prefHeight="200.0" prefWidth="200.0">
-      <ImageView fitHeight="600.0" fitWidth="231.0" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="400.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" smooth="false">
          <Image url="@../../resources/bk.jpg" />
       </ImageView>
-      <ImageView blendMode="MULTIPLY" fitHeight="119.0" fitWidth="161.0" layoutX="20.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView blendMode="MULTIPLY" fitHeight="108.0" fitWidth="168.0" layoutX="32.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <effect>
             <DropShadow />
          </effect>
          <Image url="@../../resources/logo.jpg" />
       </ImageView>
-      <Label layoutX="11.0" layoutY="206.0" text="Booking Masters" textFill="#ede5e5">
+      <Label layoutX="27.0" layoutY="205.0" text="Booking Masters" textFill="#ede5e5">
          <font>
             <Font size="24.0" />
          </font>

@@ -26,6 +26,7 @@ public class DbaseUtils {
         if( aluno == null){
             System.out.println("user not found in database");
             Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Falha no Login");
             alert.setContentText("User not found");
             alert.show();
         }else{
