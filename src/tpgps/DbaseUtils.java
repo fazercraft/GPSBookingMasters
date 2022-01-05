@@ -21,11 +21,11 @@ public class DbaseUtils {
     public static User aluno = null;
     public static  User getAlumni(){ return aluno; }
 
-    public static void logInUser(ActionEvent event, String numAl, String passAl) {
+    public static void logInUser(ActionEvent event, String mail, String passAl) {
         System.out.println("login pressed");
 
         // ler ficheiro de texto com users e pass
-        aluno  = findUser(numAl);
+        aluno  = findUser(mail);
 
         if( aluno == null){
             System.out.println("user not found in database");

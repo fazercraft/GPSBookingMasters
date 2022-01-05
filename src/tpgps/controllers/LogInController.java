@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public class LogInController implements Initializable {
 
-    @FXML private TextField txt_numeroAl;
+    @FXML private TextField txt_mail;
     @FXML private PasswordField txt_passAl;
     @FXML private Button btnLOGIN;
 
@@ -20,6 +20,6 @@ public class LogInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // BTN LOGIN
-        btnLOGIN.setOnAction(event -> DbaseUtils.logInUser(event,txt_numeroAl.getText(),txt_passAl.getText()));
+        btnLOGIN.setOnAction(event -> DbaseUtils.logInUser(event,txt_mail.getText(),txt_passAl.getText()));
     }
 }

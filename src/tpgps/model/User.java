@@ -20,7 +20,7 @@ public class User {
     public String getNumUser() {
         return numUser;
     }
-    private String getPwdUser(){ return pwdUser;}
+    public String getPwdUser(){ return pwdUser;}
     public String getNameUser() {
         return nameUser;
     }
