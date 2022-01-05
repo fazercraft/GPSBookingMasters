@@ -13,6 +13,8 @@ import java.io.IOException;
 
 public class DbaseUtils {
     public static void logInUser(ActionEvent event, String numAl, String passAl) {
+        System.out.println("login pressed");
+
         // ler ficheiro de texto com users e pass
         User aluno  = findUser(numAl);
         String userPass;
@@ -31,7 +33,7 @@ public class DbaseUtils {
             }else{
                 // salta para o MENU Scene
                 try {
-                    Parent root = FXMLLoader.load(DbaseUtils.class.getResource("menu.fxml"));
+                    Parent root = FXMLLoader.load(DbaseUtils.class.getResource("views/menu.fxml"));
 
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setTitle("Booking Masters");
