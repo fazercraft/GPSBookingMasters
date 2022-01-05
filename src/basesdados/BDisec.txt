@@ -7,7 +7,7 @@ andre
 2
 a21250385@isec.pt
 Renata Sofia Mouta Pinheiro
-numaluno
+2015014105
 renata
 
 3
@@ -27,3 +27,9 @@ anumaluno@isec.pt
 Eliana Maria Ferreira da Silva
 numaluno
 eliana
+
+666
+admin
+admin
+admin
+admin

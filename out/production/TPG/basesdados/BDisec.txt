@@ -7,7 +7,7 @@ andre
 2
 a21250385@isec.pt
 Renata Sofia Mouta Pinheiro
-numaluno
+2015014105
 renata
 
 3
@@ -31,5 +31,5 @@ eliana
 666
 admin
 admin
-adminxxxxx
+admin
 admin

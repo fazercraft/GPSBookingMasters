@@ -10,21 +10,17 @@ import javafx.stage.Stage;
 import tpgps.model.User;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
-
-
-// esta class vai servir de apoio ao login
-// e tratar a ligacao à BD
-// BD vai estar representada num ficheiro de texto
 
 
 public class DbaseUtils {
 
+
+    // DB ISEC
     public static User aluno = null;
     public static  User getAlumni(){ return aluno; }
-
     public static void logInUser(ActionEvent event, String mail, String passAl) {
         System.out.println("login pressed");
 
@@ -58,11 +54,9 @@ public class DbaseUtils {
             }
         }
     }
-
     private static Boolean findPass(String pwd) {
         return aluno.getPwdUser().equals(pwd);
     }
-
     private static User findUser(String mail) {
 
        aluno = new User("0","empty","empty","empty","empty");
@@ -93,4 +87,45 @@ public class DbaseUtils {
     }
 
 
+
+    // DB BOOKINGMASTER
+    public static ArrayList<String> getDisciplinas() {
+
+        ArrayList<String> disciplinas = new ArrayList<>();
+        String id;
+        String fim;
+
+        try {
+            File myObj = new File("src/basesdados/BDbookinMasters.txt");
+            Scanner scan = new Scanner(myObj);
+            while (scan.hasNextLine()) {
+               id = scan.nextLine();
+
+               if(id.equalsIgnoreCase(aluno.getId())){
+                   while(scan.hasNextLine()){
+                       fim = scan.nextLine();
+                       if(fim.equalsIgnoreCase("fim"))
+                           return disciplinas;
+                       disciplinas.add(fim);
+                   }
+               }
+            }
+
+            scan.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        return disciplinas;
+
+    }
+
+
+    public static ArrayList<Integer> getLugares(String disciplina) {
+        ArrayList<Integer> listaLugares = new ArrayList<>();
+        for(int i = 0; i<20;i++)
+            listaLugares.add(0);
+        return listaLugares;
+    }
 }
