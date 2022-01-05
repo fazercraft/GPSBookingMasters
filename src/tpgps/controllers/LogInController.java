@@ -16,7 +16,6 @@ public class LogInController implements Initializable {
     @FXML private PasswordField txt_passAl;
     @FXML private Button btnLOGIN;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // BTN LOGIN

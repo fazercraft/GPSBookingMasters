@@ -7,8 +7,6 @@ import java.util.ResourceBundle;
 
 public class ConsultRevsController implements Initializable {
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

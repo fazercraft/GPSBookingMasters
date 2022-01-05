@@ -39,7 +39,7 @@ public class DbaseUtils {
             alert.show();
         }else{
             if(!findPass(passAl)){
-                System.out.println("pass did not match");
+                System.out.println("pass did not match: " + passAl);
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Password incorrect");
                 alert.show();
@@ -65,18 +65,18 @@ public class DbaseUtils {
 
     private static User findUser(String mail) {
 
-       aluno = new User(0,"empty","empty","empty","empty");
+       aluno = new User("0","empty","empty","empty","empty");
 
         try {
-            File myObj = new File("BDisec.txt");
+            File myObj = new File("src/basesdados/BDisec.txt");
             Scanner scan = new Scanner(myObj);
             while (scan.hasNextLine()) {
-                aluno.setId(Integer.parseInt(scan.nextLine()));
+                aluno.setId(scan.nextLine());
                 aluno.setEmail(scan.nextLine());
+                aluno.setNameUser(scan.nextLine());
                 aluno.setNumUser(scan.nextLine());
                 aluno.setPwdUser(scan.nextLine());
-                aluno.setNameUser(scan.nextLine());
-                scan.nextLine();
+
 
                 // verificar
                 if(aluno.getEmail().equalsIgnoreCase(mail))
