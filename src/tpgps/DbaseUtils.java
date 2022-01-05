@@ -8,8 +8,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import tpgps.model.User;
-
 import java.io.IOException;
+
+
+// esta class vai servir de apoio ao login
+// e tratar a ligacao à BD
+// BD vai estar representada num ficheiro de texto
+
 
 public class DbaseUtils {
 
@@ -21,7 +26,6 @@ public class DbaseUtils {
 
         // ler ficheiro de texto com users e pass
         aluno  = findUser(numAl);
-        String userPass;
 
         if( aluno == null){
             System.out.println("user not found in database");
@@ -39,7 +43,6 @@ public class DbaseUtils {
                 // salta para o MENU Scene
                 try {
                     Parent root = FXMLLoader.load(DbaseUtils.class.getResource("views/menu.fxml"));
-
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setTitle("Booking Masters");
                     stage.setScene(new Scene(root,600,400));
