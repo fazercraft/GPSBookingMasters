@@ -8,7 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import tpgps.model.User;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 
 // esta class vai servir de apoio ao login
@@ -34,7 +38,7 @@ public class DbaseUtils {
             alert.setContentText("User not found");
             alert.show();
         }else{
-            if(!findPass(aluno, passAl)){
+            if(!findPass(passAl)){
                 System.out.println("pass did not match");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Password incorrect");
@@ -55,27 +59,35 @@ public class DbaseUtils {
         }
     }
 
-    private static Boolean findPass(User alumni,String pwd) {
-        return alumni.getPwdUser().equals(pwd);
+    private static Boolean findPass(String pwd) {
+        return aluno.getPwdUser().equals(pwd);
     }
 
-    private static User findUser(String pwd) {
-        // TODO
-        // procurar e devolver aluno
-        // caso encontre devolve o new aluno
-        // caso contrario null
+    private static User findUser(String mail) {
 
-        // quem fizer isto terá de criar um ficheiro de texto parecido com isto:
+       aluno = new User(0,"empty","empty","empty","empty");
 
-        // Andre Oliveira
-        // 2013011067
-        // password
+        try {
+            File myObj = new File("BDisec.txt");
+            Scanner scan = new Scanner(myObj);
+            while (scan.hasNextLine()) {
+                aluno.setId(Integer.parseInt(scan.nextLine()));
+                aluno.setEmail(scan.nextLine());
+                aluno.setNumUser(scan.nextLine());
+                aluno.setPwdUser(scan.nextLine());
+                aluno.setNameUser(scan.nextLine());
+                scan.nextLine();
 
-        // Daniel Rocket League
-        // 2013010000
-        // password
+                // verificar
+                if(aluno.getEmail().equalsIgnoreCase(mail))
+                    return aluno;
 
-        // por ai fora
+            }
+            scan.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
 
         return null;
     }

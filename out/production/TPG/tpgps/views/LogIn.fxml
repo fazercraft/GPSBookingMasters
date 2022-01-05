@@ -33,7 +33,7 @@
                <InnerShadow blurType="ONE_PASS_BOX" height="16.23" radius="7.727499999999999" width="16.68" />
             </effect>
          </PasswordField>
-         <TextField id="txt_numeroAl" fx:id="txt_numeroAl" layoutX="30.0" layoutY="112.0" prefHeight="35.0" prefWidth="150.0" promptText="Número Aluno" style="-fx-background-color: ECD8D2;">
+         <TextField id="txt_numeroAl" fx:id="txt_mail" layoutX="30.0" layoutY="112.0" prefHeight="35.0" prefWidth="150.0" promptText="Email isec" style="-fx-background-color: ECD8D2;">
             <effect>
                <InnerShadow blurType="ONE_PASS_BOX" choke="0.11" height="11.47" radius="6.5375" width="16.68" />
             </effect>
