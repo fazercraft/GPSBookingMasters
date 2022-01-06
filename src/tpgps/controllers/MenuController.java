@@ -32,9 +32,6 @@ public class MenuController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
            alumni = DbaseUtils.getAlumni();
 
-           //DEBUG
-           System.out.println(alumni.toString());
-
            txt_nomeAl.setText(alumni.getNumUser());
 
            btn_fazReserva.setOnAction(event -> {

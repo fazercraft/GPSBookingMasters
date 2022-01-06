@@ -9,9 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import tpgps.model.User;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -126,6 +124,7 @@ public class DbaseUtils {
     public static ArrayList<String> getLugares(String disciplina) {
         ArrayList<String> listaLugares = new ArrayList<>();
         String dic;
+        String tmp;
         try {
             File myObj = new File("src/basesdados/DBbookinMastersCourses.txt");
             Scanner scan = new Scanner(myObj);
@@ -134,7 +133,10 @@ public class DbaseUtils {
 
                 if(dic.equalsIgnoreCase(disciplina)){
                     while(scan.hasNext()){
-                        listaLugares.add(scan.next());
+                        tmp = scan.next();
+                        if(!tmp.equalsIgnoreCase("0") && !tmp.equalsIgnoreCase("1"))
+                            return listaLugares;
+                        listaLugares.add(tmp);
                     }
                     return listaLugares;
                 }
@@ -150,21 +152,38 @@ public class DbaseUtils {
 
     public static void reservaLugar(String disciplina, ArrayList<String> listaLugares) {
 
-        String dic;
+        String tmp = "";
+        for (String str : listaLugares) {
+            tmp += str + " ";
+        }
+
         try {
-            File myObj = new File("src/basesdados/DBbookinMastersCourses.txt");
-            Scanner scan = new Scanner(myObj);
-            while (scan.hasNextLine()) {
-                dic = scan.nextLine();
-
-                if(dic.equals(disciplina)){
-                    // falta tratar de gravar a alteracao
-                    // talvez guardar tudo para outroficheiro tmp e depis mudar o nome
+            FileReader reader = new FileReader("src/basesdados/DBbookinMastersCourses.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            FileWriter writer = new FileWriter("src/basesdados/savetmp.txt");
+            String line;
+            while ((line = bufferedReader.readLine())!=null){
+                if(!line.equalsIgnoreCase(disciplina)){
+                    writer.write(line + "\n");
+                }else{
+                    writer.write(line + "\n");
+                    writer.write(tmp + "\n");
+                    bufferedReader.readLine();
                 }
-
             }
+            reader.close();
+            writer.close();
 
-            scan.close();
+            FileReader readSave = new FileReader("src/basesdados/savetmp.txt");
+            BufferedReader BuffSave = new BufferedReader(readSave);
+            FileWriter writerSave = new FileWriter("src/basesdados/DBbookinMastersCourses.txt");
+            String jardel;
+            while ((jardel = BuffSave.readLine())!=null){
+                writerSave.write(jardel + "\n");
+            }
+            readSave.close();
+            writerSave.close();
+
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

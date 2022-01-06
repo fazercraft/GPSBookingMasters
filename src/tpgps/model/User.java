@@ -1,5 +1,7 @@
 package tpgps.model;
 
+import java.util.ArrayList;
+
 public class User {
 
     private String id;
@@ -7,6 +9,7 @@ public class User {
     private String numUser;
     private String pwdUser;
     private String nameUser;
+    private ArrayList<String> listaReservas;
 
     public User(String id, String email,String numUser, String pwdUser, String nameUser) {
         this.id = id;
@@ -14,6 +17,7 @@ public class User {
         this.numUser = numUser;
         this.pwdUser = pwdUser;
         this.nameUser = nameUser;
+        listaReservas = new ArrayList<>();
     }
 
 
@@ -27,6 +31,7 @@ public class User {
     public String getNameUser() {
         return nameUser;
     }
+    public ArrayList<String> getListaReservas(){return listaReservas;}
 
     // SETS
     public void setId(String id) { this.id = id; }
@@ -40,6 +45,8 @@ public class User {
     public void setNameUser(String nameUser) {
         this.nameUser = nameUser;
     }
+    public void addReserva(String res){this.listaReservas.add(res);}
+    public void rmReserva(String res){this.listaReservas.remove(res);}
 
     @Override
     public String toString() {
