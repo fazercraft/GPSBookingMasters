@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import tpgps.model.User;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -122,10 +123,51 @@ public class DbaseUtils {
     }
 
 
-    public static ArrayList<Integer> getLugares(String disciplina) {
-        ArrayList<Integer> listaLugares = new ArrayList<>();
-        for(int i = 0; i<20;i++)
-            listaLugares.add(0);
+    public static ArrayList<String> getLugares(String disciplina) {
+        ArrayList<String> listaLugares = new ArrayList<>();
+        String dic;
+        try {
+            File myObj = new File("src/basesdados/DBbookinMastersCourses.txt");
+            Scanner scan = new Scanner(myObj);
+            while (scan.hasNextLine()) {
+                dic = scan.nextLine();
+
+                if(dic.equalsIgnoreCase(disciplina)){
+                    while(scan.hasNext()){
+                        listaLugares.add(scan.next());
+                    }
+                    return listaLugares;
+                }
+            }
+
+            scan.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
         return listaLugares;
+    }
+
+    public static void reservaLugar(String disciplina, ArrayList<String> listaLugares) {
+
+        String dic;
+        try {
+            File myObj = new File("src/basesdados/DBbookinMastersCourses.txt");
+            Scanner scan = new Scanner(myObj);
+            while (scan.hasNextLine()) {
+                dic = scan.nextLine();
+
+                if(dic.equals(disciplina)){
+                    // falta tratar de gravar a alteracao
+                    // talvez guardar tudo para outroficheiro tmp e depis mudar o nome
+                }
+
+            }
+
+            scan.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }
