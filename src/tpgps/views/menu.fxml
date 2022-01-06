@@ -40,7 +40,7 @@
          <Button fx:id="btn_fazReserva" layoutX="30.0" layoutY="74.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="151.0" style="-fx-background-color: B96AF0;" text="Fazer Reserva" textFill="WHITE" />
          <Button fx:id="btn_removeReserva" layoutX="30.0" layoutY="125.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="151.0" style="-fx-background-color: B96AF0;" text="Remover Reserva" textFill="WHITE" />
          <Button fx:id="btn_verReservas" layoutX="30.0" layoutY="176.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="151.0" style="-fx-background-color: B96AF0;" text="Ver Reservas" textFill="WHITE" />
-         <Button fx:id="btn_verLugares" layoutX="30.0" layoutY="230.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="151.0" style="-fx-background-color: B96AF0;" text="Ver Lugares" textFill="WHITE" />
+         <Button fx:id="btn_historico" layoutX="30.0" layoutY="230.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="151.0" style="-fx-background-color: B96AF0;" text="Histótico" textFill="WHITE" />
       </Pane>
    </AnchorPane>
 </HBox>

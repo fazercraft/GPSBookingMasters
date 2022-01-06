@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -27,43 +26,15 @@
             </effect>
         </Label>
     </AnchorPane>
-    <AnchorPane prefHeight="400.0" prefWidth="417.0" style="-fx-background-color: D1B7ED;">
+    <AnchorPane fx:id="btn_voltar" prefHeight="400.0" prefWidth="417.0" style="-fx-background-color: D1B7ED;">
         <Pane layoutX="100.0" layoutY="48.0" prefHeight="293.0" prefWidth="210.0" style="-fx-background-color: ffffff; -fx-border-radius: 20 20 20 20 ;">
-            <Label layoutX="59.0" layoutY="35.0" text="Consulta" textAlignment="CENTER" textFill="#0e0e0e">
+            <Label layoutX="59.0" layoutY="14.0" text="Consulta" textAlignment="CENTER" textFill="#0e0e0e">
                 <font>
                     <Font size="24.0" />
                 </font>
             </Label>
-         <Label alignment="CENTER" layoutX="31.0" layoutY="70.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="148.0" text="Reservas encontradas: 6" textAlignment="CENTER" />
-         <Label alignment="CENTER" layoutX="39.0" layoutY="96.0" prefHeight="20.0" prefWidth="132.0" style="-fx-background-color: B96AF0; -fx-border-color: PURPLE; -fx-border-width: 1;" text="Disciplina 1" textAlignment="CENTER" textFill="WHITE">
-            <opaqueInsets>
-               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-            </opaqueInsets></Label>
-         <Label alignment="CENTER" layoutX="39.0" layoutY="125.0" prefHeight="20.0" prefWidth="132.0" style="-fx-background-color: B96AF0; -fx-border-color: PURPLE; -fx-border-width: 1;" text="Disciplina 2" textAlignment="CENTER" textFill="WHITE">
-            <opaqueInsets>
-               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-            </opaqueInsets>
-         </Label>
-         <Label alignment="CENTER" layoutX="39.0" layoutY="153.0" prefHeight="20.0" prefWidth="132.0" style="-fx-background-color: B96AF0; -fx-border-color: PURPLE; -fx-border-width: 1;" text="Disciplina 3" textAlignment="CENTER" textFill="WHITE">
-            <opaqueInsets>
-               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-            </opaqueInsets>
-         </Label>
-         <Label alignment="CENTER" layoutX="39.0" layoutY="182.0" prefHeight="20.0" prefWidth="132.0" style="-fx-background-color: B96AF0; -fx-border-color: PURPLE; -fx-border-width: 1;" text="Disciplina 4" textAlignment="CENTER" textFill="WHITE">
-            <opaqueInsets>
-               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-            </opaqueInsets>
-         </Label>
-         <Label alignment="CENTER" layoutX="39.0" layoutY="210.0" prefHeight="20.0" prefWidth="132.0" style="-fx-background-color: B96AF0; -fx-border-color: PURPLE; -fx-border-width: 1;" text="Disciplina 5" textAlignment="CENTER" textFill="WHITE">
-            <opaqueInsets>
-               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-            </opaqueInsets>
-         </Label>
-         <Label alignment="CENTER" layoutX="39.0" layoutY="239.0" prefHeight="20.0" prefWidth="132.0" style="-fx-background-color: B96AF0; -fx-border-color: PURPLE; -fx-border-width: 1;" text="Disciplina 6" textAlignment="CENTER" textFill="WHITE">
-            <opaqueInsets>
-               <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-            </opaqueInsets>
-         </Label>
+         <Label alignment="CENTER" layoutX="31.0" layoutY="49.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="148.0" text="Reservas encontradas: 6" textAlignment="CENTER" />
+         <Button fx:id="btn_voltaren" layoutX="59.0" layoutY="129.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: B96AF0;" text="Voltar" textAlignment="CENTER" textFill="WHITE" />
         </Pane>
     </AnchorPane>
 </HBox>

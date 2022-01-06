@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tpgps.controllers.R">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tpgps.controllers.DelReserveController">
     <AnchorPane prefHeight="200.0" prefWidth="200.0">
         <ImageView fitHeight="400.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" smooth="false">
             <Image url="@../../resources/bk.jpg" />
@@ -35,7 +35,7 @@
             </Label>
          <ChoiceBox layoutX="39.0" layoutY="122.0" prefHeight="29.0" prefWidth="139.0" />
          <Label layoutX="69.0" layoutY="70.0" text="Choose Class " />
-         <Button layoutX="31.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: B96AF0;" text="Voltar" textFill="WHITE" />
+         <Button fx:id="btn_voltar" layoutX="31.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: B96AF0;" text="Voltar" textFill="WHITE" />
          <Button layoutX="106.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: B96AF0;" text="Remover" textFill="WHITE" />
         </Pane>
     </AnchorPane>

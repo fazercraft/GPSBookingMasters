@@ -23,7 +23,7 @@ public class MenuController implements Initializable {
     @FXML Button btn_fazReserva;
     @FXML Button btn_removeReserva;
     @FXML Button btn_verReservas;
-    @FXML Button btn_verLugares;
+    @FXML Button btn_historico;
     @FXML Label txt_nomeAl;
 
     User alumni;
@@ -47,6 +47,48 @@ public class MenuController implements Initializable {
                stage.show();
 
            } );
+        btn_removeReserva.setOnAction(event -> {
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(DbaseUtils.class.getResource("views/removeseat.fxml"));
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("Booking Masters");
+            stage.setScene(new Scene(root,600,400));
+            stage.show();
+
+        } );
+
+        btn_verReservas.setOnAction(event -> {
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(DbaseUtils.class.getResource("views/consultrevs.fxml"));
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("Booking Masters");
+            stage.setScene(new Scene(root,600,400));
+            stage.show();
+
+        } );
+
+
+        btn_historico.setOnAction(event -> {
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(DbaseUtils.class.getResource("views/historico.fxml"));
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("Booking Masters");
+            stage.setScene(new Scene(root,600,400));
+            stage.show();
+
+        } );
 
 
 
