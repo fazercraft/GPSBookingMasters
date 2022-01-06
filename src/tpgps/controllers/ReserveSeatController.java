@@ -463,6 +463,7 @@ public class ReserveSeatController implements Initializable {
                 Path imageFile = Paths.get("src/resources/online-red-icon.png");
                 try {
                     listaViews.get(i).setImage(new Image(imageFile.toUri().toURL().toExternalForm()));
+
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }

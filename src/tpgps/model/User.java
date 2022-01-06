@@ -57,7 +57,12 @@ public class User {
         alumni +="\nNome: " + this.getNameUser();
         alumni +="\nNUM: " + this.getNumUser();
         alumni +="\nPASS: " + this.getPwdUser();
+        alumni +="\nReservas: ";
 
+        for (String str: listaReservas) {
+            alumni += str + " | ";
+        }
+        alumni +="\n";
        return alumni;
 
 

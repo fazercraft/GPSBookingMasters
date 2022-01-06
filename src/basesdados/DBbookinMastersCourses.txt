@@ -22,28 +22,28 @@ Gestão
 Electrónica
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-AM1
+AM UM
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-AM2
+AM DOIS
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Álgebra Linear
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-SO2
+SO DOIS
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-SO1
-0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+SO UM
+0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
-Sis. Informação 1
+Sis. Informação um
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Serviços de Rede 1
+Serviços de Rede um
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Serviços de Rede 1
+Serviços de Rede dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Segurança
@@ -91,10 +91,10 @@ Arq. Admim. Bases de Dados
 Tecnologias de Ligação
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Sis. Informação 2
+Sis. Informação dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Serviços de Rede 2
+Serviços de Rede dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Programação WEB
@@ -113,10 +113,10 @@ Gestão de Redes
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 GPS
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
 Estruturas de Dados
-0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
 Estratégia Organizacional
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

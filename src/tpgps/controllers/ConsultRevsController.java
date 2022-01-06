@@ -8,8 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
+import tpgps.model.User;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,9 +22,23 @@ public class ConsultRevsController implements Initializable {
 
     @FXML
     Button btn_voltaren;
+    @FXML
+    ListView<String> consulta_list_view;
+    @FXML
+    Label label_reservas_encontradas;
+
+    User alumni;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        alumni = DbaseUtils.getAlumni();
+
+        for (String str: alumni.getListaReservas()) {
+            consulta_list_view.getItems().add(str);
+        }
+
+        label_reservas_encontradas.setText(String.valueOf(alumni.getListaReservas().size()));
 
         btn_voltaren.setOnAction(event -> {
             Parent root = null;

@@ -21,10 +21,9 @@ public class DbaseUtils {
     public static User aluno = null;
     public static  User getAlumni(){ return aluno; }
     public static void logInUser(ActionEvent event, String mail, String passAl) {
-        System.out.println("login pressed");
-
         // ler ficheiro de texto com users e pass
         aluno  = findUser(mail);
+        udpateReservasAluno();
 
         if( aluno == null){
             System.out.println("user not found in database");
@@ -46,6 +45,7 @@ public class DbaseUtils {
                     stage.setTitle("Booking Masters");
                     stage.setScene(new Scene(root,600,400));
                     stage.show();
+                    System.out.println("Login Successful");
 
                 } catch (IOException exception) {
                     exception.printStackTrace();
@@ -70,10 +70,11 @@ public class DbaseUtils {
                 aluno.setNumUser(scan.nextLine());
                 aluno.setPwdUser(scan.nextLine());
 
-
                 // verificar
                 if(aluno.getEmail().equalsIgnoreCase(mail))
                     return aluno;
+                else
+                    scan.nextLine();
 
             }
             scan.close();
@@ -82,9 +83,8 @@ public class DbaseUtils {
             e.printStackTrace();
         }
 
-        return null;
+        return aluno;
     }
-
 
 
     // DB BOOKINGMASTER
@@ -119,8 +119,6 @@ public class DbaseUtils {
         return disciplinas;
 
     }
-
-
     public static ArrayList<String> getLugares(String disciplina) {
         ArrayList<String> listaLugares = new ArrayList<>();
         String dic;
@@ -149,7 +147,6 @@ public class DbaseUtils {
         }
         return listaLugares;
     }
-
     public static void reservaLugar(String disciplina, ArrayList<String> listaLugares) {
 
         String tmp = "";
@@ -188,5 +185,30 @@ public class DbaseUtils {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+    private static void udpateReservasAluno() {
+
+        try {
+            FileReader reader = new FileReader("src/basesdados/DBbookinMastersCourses.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            FileWriter writer = new FileWriter("src/basesdados/savetmp.txt");
+            String line;
+            String lineNext;
+            while ((line = bufferedReader.readLine())!=null){
+                lineNext = bufferedReader.readLine(); // 0 0 0 0 1 0 0 0 5 0 0 ...
+                   if(lineNext.contains(aluno.getId()) )
+                       aluno.addReserva(line);
+            }
+            reader.close();
+            writer.close();
+
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+
+
     }
 }
