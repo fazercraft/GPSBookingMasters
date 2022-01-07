@@ -7,11 +7,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
+import tpgps.model.Reserva;
+import tpgps.model.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HistoricoController implements Initializable {
@@ -19,8 +24,37 @@ public class HistoricoController implements Initializable {
     @FXML
     Button btn_voltar;
 
+    @FXML
+    ListView<String> list_view_id;
+
+    @FXML
+    Label label_reservas_encontradas;
+
+    User alumni;
+    ArrayList<Reserva> reservas;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        alumni = DbaseUtils.getAlumni();
+        reservas = DbaseUtils.getReservas();
+
+
+        for (Reserva res: reservas) {
+            if(res.getNomeUser().equalsIgnoreCase(alumni.getNameUser())) {
+                String booked = res.getDisciplinaUser() + " | " + res.getData() + " | " + res.getAtivo();
+                list_view_id.getItems().add(booked);
+            }
+
+        }
+
+        label_reservas_encontradas.setText(String.valueOf(alumni.getListaReservas().size()));
+
+
+
+
+
 
         btn_voltar.setOnAction(event -> {
             Parent root;

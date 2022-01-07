@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import tpgps.model.Reserva;
 import tpgps.model.User;
 
 import java.io.*;
@@ -15,14 +16,20 @@ import java.util.Scanner;
 
 
 public class DbaseUtils {
-
+    public static User aluno = null;
+    public static ArrayList<Reserva> reservas = null;
 
     // DB ISEC
-    public static User aluno = null;
     public static  User getAlumni(){ return aluno; }
     public static void logInUser(ActionEvent event, String mail, String passAl) {
         // ler ficheiro de texto com users e pass
         aluno  = findUser(mail);
+        reservas = findReservas();
+
+        for (Reserva res: reservas) {
+            System.out.println(res);
+        }
+
         udpateReservasAluno();
 
         if( aluno == null){
@@ -53,6 +60,30 @@ public class DbaseUtils {
             }
         }
     }
+
+    private static ArrayList<Reserva> findReservas() {
+        reservas = new ArrayList<>();
+
+        try {
+            File myObj = new File("src/basesdados/reservas.txt");
+            Scanner scan = new Scanner(myObj);
+            while (scan.hasNextLine()) {
+                Reserva resTmp = new Reserva(aluno.getNameUser(), "tmp","tmp","0");
+                resTmp.setNomeUser(scan.nextLine());
+                resTmp.setDisciplinaUser(scan.nextLine());
+                resTmp.setData(scan.nextLine());
+                resTmp.setAtivo(scan.nextLine());
+                reservas.add(resTmp);
+
+            }
+            scan.close();
+        } catch (IOException e) {
+            System.out.println("ERRO LOAD RESERVAS.");
+            e.printStackTrace();
+        }
+        return reservas;
+    }
+
     private static Boolean findPass(String pwd) {
         return aluno.getPwdUser().equals(pwd);
     }
@@ -88,6 +119,7 @@ public class DbaseUtils {
 
 
     // DB BOOKINGMASTER
+    public static ArrayList<Reserva> getReservas(){return reservas;}
     public static ArrayList<String> getDisciplinas() {
 
         ArrayList<String> disciplinas = new ArrayList<>();

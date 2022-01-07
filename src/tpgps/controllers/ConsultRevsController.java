@@ -12,10 +12,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
+import tpgps.model.Reserva;
 import tpgps.model.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ConsultRevsController implements Initializable {
@@ -28,17 +30,24 @@ public class ConsultRevsController implements Initializable {
     Label label_reservas_encontradas;
 
     User alumni;
+    ArrayList<Reserva> reservas;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         alumni = DbaseUtils.getAlumni();
+        reservas=DbaseUtils.getReservas();
 
-        for (String str: alumni.getListaReservas()) {
-            consulta_list_view.getItems().add(str);
+
+        for (Reserva res: reservas) {
+            if(res.getNomeUser().equalsIgnoreCase(alumni.getNameUser()) && res.getAtivo().contains("1")) {
+                String booked = res.getDisciplinaUser() + " | " + res.getData() + " | " + res.getAtivo();
+                consulta_list_view.getItems().add(booked);
+            }
+
         }
 
-        label_reservas_encontradas.setText(String.valueOf(alumni.getListaReservas().size()));
+        label_reservas_encontradas.setText(String.valueOf(consulta_list_view.getItems().size()));
 
         btn_voltaren.setOnAction(event -> {
             Parent root = null;
