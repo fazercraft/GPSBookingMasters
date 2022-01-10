@@ -87,9 +87,7 @@ public class ReserveSeatController implements Initializable {
          });
 
     }
-
     private void setImagesListeners(ArrayList<ImageView> listaViews) {
-
         for(int i = 0;i<20;i++){
             int finalI = i;
             listaViews.get(i).setOnMouseClicked(mouseEvent -> {
@@ -97,7 +95,6 @@ public class ReserveSeatController implements Initializable {
             });
         }
     }
-
     private void alertaConfimacao(int pos) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirme");
@@ -127,6 +124,13 @@ public class ReserveSeatController implements Initializable {
         for (int i = 0; i < listaLugares.size();i++){
             if(listaLugares.get(i).equals("0")){
                 Path imageFile = Paths.get("src/resources/online-icon.png");
+                try {
+                    listaViews.get(i).setImage(new Image(imageFile.toUri().toURL().toExternalForm()));
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+            }else if(listaLugares.get(i).equals(alumni.getId())){
+                Path imageFile = Paths.get("src/resources/me.png");
                 try {
                     listaViews.get(i).setImage(new Image(imageFile.toUri().toURL().toExternalForm()));
                 } catch (MalformedURLException e) {

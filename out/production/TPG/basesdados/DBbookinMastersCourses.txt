@@ -98,7 +98,7 @@ Serviços de Rede dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Programação WEB
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
 Programação Distribuída
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
