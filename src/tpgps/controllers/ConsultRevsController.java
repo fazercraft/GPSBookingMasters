@@ -44,7 +44,6 @@ public class ConsultRevsController implements Initializable {
                 String booked = res.getDisciplinaUser() + " | " + res.getData() + " | " + res.getAtivo();
                 consulta_list_view.getItems().add(booked);
             }
-
         }
 
         label_reservas_encontradas.setText(String.valueOf(consulta_list_view.getItems().size()));

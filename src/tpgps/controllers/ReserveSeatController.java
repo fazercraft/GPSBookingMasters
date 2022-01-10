@@ -57,12 +57,11 @@ public class ReserveSeatController implements Initializable {
         alumni = DbaseUtils.getAlumni();
         reservas= DbaseUtils.getReservas();
 
-        ArrayList<String> listaDisciplinas = DbaseUtils.getDisciplinas();
-
         //DEBUG
         System.out.println(alumni.toString());
 
 
+        ArrayList<String> listaDisciplinas = DbaseUtils.getDisciplinas();
         for (String str : listaDisciplinas)
             idChooser.getItems().add(str);
 

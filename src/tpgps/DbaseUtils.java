@@ -55,30 +55,6 @@ public class DbaseUtils {
             }
         }
     }
-
-    private static ArrayList<Reserva> findReservas() {
-        reservas = new ArrayList<>();
-
-        try {
-            File myObj = new File("src/basesdados/reservas.txt");
-            Scanner scan = new Scanner(myObj);
-            while (scan.hasNextLine()) {
-                Reserva resTmp = new Reserva(aluno.getNameUser(), "tmp","tmp","0");
-                resTmp.setNomeUser(scan.nextLine());
-                resTmp.setDisciplinaUser(scan.nextLine());
-                resTmp.setData(scan.nextLine());
-                resTmp.setAtivo(scan.nextLine());
-                reservas.add(resTmp);
-
-            }
-            scan.close();
-        } catch (IOException e) {
-            System.out.println("ERRO LOAD RESERVAS.");
-            e.printStackTrace();
-        }
-        return reservas;
-    }
-
     private static Boolean findPass(String pwd) {
         return aluno.getPwdUser().equals(pwd);
     }
@@ -114,6 +90,28 @@ public class DbaseUtils {
 
 
     // DB BOOKINGMASTER
+    private static ArrayList<Reserva> findReservas() {
+        reservas = new ArrayList<>();
+
+        try {
+            File myObj = new File("src/basesdados/reservas.txt");
+            Scanner scan = new Scanner(myObj);
+            while (scan.hasNextLine()) {
+                Reserva resTmp = new Reserva(aluno.getNameUser(), "tmp","tmp","0");
+                resTmp.setNomeUser(scan.nextLine());
+                resTmp.setDisciplinaUser(scan.nextLine());
+                resTmp.setData(scan.nextLine());
+                resTmp.setAtivo(scan.nextLine());
+                reservas.add(resTmp);
+
+            }
+            scan.close();
+        } catch (IOException e) {
+            System.out.println("ERRO LOAD RESERVAS.");
+            e.printStackTrace();
+        }
+        return reservas;
+    }
     public static ArrayList<Reserva> getReservas(){return reservas;}
     public static ArrayList<String> getDisciplinas() {
 
@@ -175,9 +173,9 @@ public class DbaseUtils {
     }
     public static void reservaLugar(String disciplina, ArrayList<String> listaLugares) {
 
-        String tmp = "";
+        StringBuilder tmp = new StringBuilder();
         for (String str : listaLugares) {
-            tmp += str + " ";
+            tmp.append(str).append(" ");
         }
 
         try {
@@ -212,9 +210,7 @@ public class DbaseUtils {
             e.printStackTrace();
         }
     }
-
     public static void saveToFileReserva(Reserva novaRes) {
-
 
             try {
                 FileWriter writer = new FileWriter("src/basesdados/reservas.txt",true);
@@ -228,6 +224,35 @@ public class DbaseUtils {
                 e.printStackTrace();
             }
 
+    }
+    public static void UpdateFileReservas() {
+        // apagar reservas.txt e escrever para lá a lista de revs como está
+        try {
+            FileWriter writer = new FileWriter("src/basesdados/reservas.txt",false);
+            for (Reserva res:reservas) {
+                writer.write(  res.getNomeUser() + "\n");
+                writer.write(res.getDisciplinaUser()+ "\n");
+                writer.write(res.getData()+ "\n");
+                writer.write(res.getAtivo()+"\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred writing to reservas.txt");
+            e.printStackTrace();
+        }
+
+
+    }
+    public static void removeLugar(String disciplina) {
+        // atualizar no ficheiro bookingMastersCourses na disciplina o lugar para 0
+        // onde o lugar for igual ao id do user
+
+        ArrayList<String> listaLugares = getLugares(disciplina);
+        for(int i = 0; i< listaLugares.size();i++)
+            if(listaLugares.get(i).contains(aluno.getId()))
+                listaLugares.set(i,"0");
+
+        reservaLugar(disciplina,listaLugares);
 
     }
 }

@@ -33,10 +33,11 @@
                     <Font size="24.0" />
                 </font>
             </Label>
-         <ChoiceBox layoutX="39.0" layoutY="122.0" prefHeight="29.0" prefWidth="139.0" />
-         <Label layoutX="69.0" layoutY="70.0" text="Choose Class " />
-         <Button fx:id="btn_voltar" layoutX="31.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: B96AF0;" text="Voltar" textFill="WHITE" />
-         <Button layoutX="106.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: B96AF0;" text="Remover" textFill="WHITE" />
+         <ChoiceBox fx:id="chooser_id" layoutX="19.0" layoutY="90.0" prefHeight="25.0" prefWidth="170.0" />
+         <Label layoutX="70.0" layoutY="62.0" text="Choose Class " />
+         <Button fx:id="btn_voltar" layoutX="33.0" layoutY="228.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: B96AF0;" text="Voltar" textFill="WHITE" />
+         <Button fx:id="btn_remove" layoutX="108.0" layoutY="228.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-color: B96AF0;" text="Remover" textFill="WHITE" />
+         <Label fx:id="label_reserva" alignment="CENTER" layoutX="23.0" layoutY="147.0" prefHeight="25.0" prefWidth="158.0" style="-fx-background-color: C8B6D5;" text="teste" textAlignment="CENTER" />
         </Pane>
     </AnchorPane>
 </HBox>
