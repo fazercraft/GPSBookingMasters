@@ -33,8 +33,8 @@
                     <Font size="24.0" />
                 </font>
             </Label>
-            <Label alignment="CENTER" layoutX="31.0" layoutY="70.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="148.0" text="Reservas encontradas: x" textAlignment="CENTER" />
-         <ListView editable="true" layoutX="25.0" layoutY="90.0" prefHeight="136.0" prefWidth="161.0" style="-fx-background-color: e4ede0;" />
+            <Label fx:id="label_reservas_encontradas" alignment="CENTER" layoutX="31.0" layoutY="70.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="148.0" text="Reservas encontradas: x" textAlignment="CENTER" />
+         <ListView fx:id="list_view_id" editable="true" layoutX="25.0" layoutY="90.0" prefHeight="136.0" prefWidth="161.0" style="-fx-background-color: e4ede0;" />
          <Button fx:id="btn_voltar" layoutX="49.0" layoutY="238.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: B96AF0;" text="VOLTAR" textFill="#ffffff" />
         </Pane>
     </AnchorPane>

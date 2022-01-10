@@ -26,11 +26,6 @@ public class DbaseUtils {
         aluno  = findUser(mail);
         reservas = findReservas();
 
-        for (Reserva res: reservas) {
-            System.out.println(res);
-        }
-
-        udpateReservasAluno();
 
         if( aluno == null){
             System.out.println("user not found in database");
@@ -160,13 +155,12 @@ public class DbaseUtils {
             Scanner scan = new Scanner(myObj);
             while (scan.hasNextLine()) {
                 dic = scan.nextLine();
-
+                int i=0;
                 if(dic.equalsIgnoreCase(disciplina)){
-                    while(scan.hasNext()){
+                    while(scan.hasNext() && i < 20){
                         tmp = scan.next();
-                        if(!tmp.equalsIgnoreCase("0") && !tmp.equalsIgnoreCase("1"))
-                            return listaLugares;
                         listaLugares.add(tmp);
+                        i++;
                     }
                     return listaLugares;
                 }
@@ -218,28 +212,21 @@ public class DbaseUtils {
             e.printStackTrace();
         }
     }
-    private static void udpateReservasAluno() {
 
-        try {
-            FileReader reader = new FileReader("src/basesdados/DBbookinMastersCourses.txt");
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            FileWriter writer = new FileWriter("src/basesdados/savetmp.txt");
-            String line;
-            String lineNext;
-            while ((line = bufferedReader.readLine())!=null){
-                lineNext = bufferedReader.readLine(); // 0 0 0 0 1 0 0 0 5 0 0 ...
-                   if(lineNext.contains(aluno.getId()) )
-                       aluno.addReserva(line);
+    public static void saveToFileReserva(Reserva novaRes) {
+
+
+            try {
+                FileWriter writer = new FileWriter("src/basesdados/reservas.txt",true);
+                writer.write( "\n" + novaRes.getNomeUser() + "\n");
+                writer.write(novaRes.getDisciplinaUser()+ "\n");
+                writer.write(novaRes.getData()+ "\n");
+                writer.write(novaRes.getAtivo());
+                writer.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred writing to reservas.txt");
+                e.printStackTrace();
             }
-            reader.close();
-            writer.close();
-
-
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
 
 
     }

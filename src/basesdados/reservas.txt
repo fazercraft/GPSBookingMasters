@@ -5,7 +5,7 @@ Estruturas de Dados
 Renata Sofia Mouta Pinheiro
 Estruturas de Dados
 07/01/2022
-1
+0
 Daniel Oliveira Jesus
 Estruturas de Dados
 07/01/2022
@@ -14,3 +14,11 @@ André Pessoa de Oliveira
 Arquitecturas Móveis
 25/11/2021
 0
+André Pessoa de Oliveira
+SO UM
+2022-01-10
+1
+André Pessoa de Oliveira
+GPS
+2022-01-10
+1

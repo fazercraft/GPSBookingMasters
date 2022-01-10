@@ -8,11 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
+import tpgps.model.Reserva;
 import tpgps.model.User;
 
 import java.io.IOException;
@@ -21,12 +23,14 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
 public class ReserveSeatController implements Initializable {
 
     User alumni;
+    ArrayList<Reserva> reservas;
 
     @FXML ChoiceBox<String> idChooser;
     @FXML Button btn_voltar;
@@ -51,6 +55,8 @@ public class ReserveSeatController implements Initializable {
         listaViews.add(l16);listaViews.add(l17);listaViews.add(l18);listaViews.add(l19);listaViews.add(l20);
 
         alumni = DbaseUtils.getAlumni();
+        reservas= DbaseUtils.getReservas();
+
         ArrayList<String> listaDisciplinas = DbaseUtils.getDisciplinas();
 
         //DEBUG
@@ -84,366 +90,35 @@ public class ReserveSeatController implements Initializable {
     }
 
     private void setImagesListeners(ArrayList<ImageView> listaViews) {
-        listaViews.get(0).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(0).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
 
-                listaLugares.set(0, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(1).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(1).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
+        for(int i = 0;i<20;i++){
+            int finalI = i;
+            listaViews.get(i).setOnMouseClicked(mouseEvent -> {
+                if(!listaLugares.get(finalI).equals("0") || buscaRes()){ alertaErro(); } else{ alertaConfimacao(finalI); }
+            });
+        }
+    }
 
-                listaLugares.set(1, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(2).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(2).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
+    private void alertaConfimacao(int pos) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirme");
+        alert.setContentText("Tem a certeza de que deseja reservar lugar?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isEmpty() || result.get() == ButtonType.OK) {
+            listaLugares.set(pos, alumni.getId());
+            DbaseUtils.reservaLugar(disciplina,listaLugares);
+            Reserva novaRes = new Reserva(alumni.getNameUser(),disciplina,java.time.LocalDate.now().toString(),"1");
+            reservas.add(novaRes);
+            DbaseUtils.saveToFileReserva(novaRes);
+            updateLugares(listaLugares);
+        }
+    }
 
-                listaLugares.set(2, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(3).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(3).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(3, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(4).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(4).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(4, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(5).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(5).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(5, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(6).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(6).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(6, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(7).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(7).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(7, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(8).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(8).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(8, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(9).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(9).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(9 ,alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(10).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(10).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(10, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(11).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(11).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(11, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(12).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(12).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(12, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(13).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(13).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(13, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(14).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(14).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(14, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(15).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(15).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(15, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(16).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(16).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(16, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(17).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(17).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(17, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(18).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(18).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(18, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
-        listaViews.get(19).setOnMouseClicked(mouseEvent -> {
-            if(!listaLugares.get(19).equals("0") || buscaRes()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Reserva inválida");
-                alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
-                alert.show();
-            }else{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirme");
-                alert.setContentText("Tem a certeza de que deseja reservar lugar?");
-                alert.show();
-
-                listaLugares.set(19, alumni.getId());
-                alumni.addReserva(disciplina);
-                DbaseUtils.reservaLugar(disciplina,listaLugares);
-                updateLugares(listaLugares);
-            }
-        });
+    private void alertaErro() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Reserva inválida");
+        alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
+        alert.show();
     }
 
     private boolean buscaRes(){

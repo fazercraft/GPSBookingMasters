@@ -39,17 +39,18 @@ public class HistoricoController implements Initializable {
 
         alumni = DbaseUtils.getAlumni();
         reservas = DbaseUtils.getReservas();
-
+        int num = 0;
 
         for (Reserva res: reservas) {
             if(res.getNomeUser().equalsIgnoreCase(alumni.getNameUser())) {
                 String booked = res.getDisciplinaUser() + " | " + res.getData() + " | " + res.getAtivo();
                 list_view_id.getItems().add(booked);
+                num++;
             }
 
         }
 
-        label_reservas_encontradas.setText(String.valueOf(alumni.getListaReservas().size()));
+        label_reservas_encontradas.setText(String.valueOf(num));
 
 
 
