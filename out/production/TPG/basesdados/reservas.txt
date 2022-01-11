@@ -21,7 +21,7 @@ Programação Distribuída
 André Pessoa de Oliveira
 Estruturas de Dados
 2022-01-10
-1
+0
 Daniel Oliveira Jesus
 Estruturas de Dados
 2022-01-11
@@ -48,5 +48,13 @@ GPS
 0
 Renata Sofia Mouta Pinheiro
 SO UM
+2022-01-11
+1
+André Pessoa de Oliveira
+Programação Distribuída
+2022-01-11
+0
+André Pessoa de Oliveira
+Estruturas de Dados
 2022-01-11
 1
