@@ -23,6 +23,7 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -76,7 +77,7 @@ public class ReserveSeatController implements Initializable {
          btn_voltar.setOnAction(event -> {
              Parent root;
              try {
-                 root = FXMLLoader.load(DbaseUtils.class.getResource("views/menu.fxml"));
+                 root = FXMLLoader.load(Objects.requireNonNull(DbaseUtils.class.getResource("views/menu.fxml")));
                  Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                  stage.setTitle("Booking Masters");
                  stage.setScene(new Scene(root,600,400));
@@ -109,14 +110,12 @@ public class ReserveSeatController implements Initializable {
             updateLugares(listaLugares);
         }
     }
-
     private void alertaErro() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Reserva inválida");
         alert.setContentText("Lugar já se encontra ocupado ou utilizador já possui reserva");
         alert.show();
     }
-
     private boolean buscaRes(){
         return listaLugares.contains(alumni.getId());
     }

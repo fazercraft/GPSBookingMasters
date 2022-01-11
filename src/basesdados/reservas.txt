@@ -1,7 +1,3 @@
-André Pessoa de Oliveira
-Estruturas de Dados
-07/01/2022
-1
 Renata Sofia Mouta Pinheiro
 Estruturas de Dados
 07/01/2022
@@ -10,23 +6,51 @@ Daniel Oliveira Jesus
 Estruturas de Dados
 07/01/2022
 0
-André Pessoa de Oliveira
-Arquitecturas Móveis
-25/11/2021
-0
-André Pessoa de Oliveira
-SO UM
-2022-01-10
-0
-André Pessoa de Oliveira
-GPS
-2022-01-10
-0
 Renata Sofia Mouta Pinheiro
 SO UM
 2022-01-10
-1
+0
 André Pessoa de Oliveira
 Programação WEB
 2022-01-10
 0
+André Pessoa de Oliveira
+Programação Distribuída
+2022-01-10
+0
+André Pessoa de Oliveira
+Estruturas de Dados
+2022-01-10
+0
+Daniel Oliveira Jesus
+Estruturas de Dados
+2022-01-11
+0
+André Pessoa de Oliveira
+Programação WEB
+2022-01-11
+0
+Daniel Oliveira Jesus
+Programação WEB
+2022-01-11
+0
+André Pessoa de Oliveira
+SO UM
+2022-01-11
+0
+Renata Sofia Mouta Pinheiro
+Estruturas de Dados
+2022-01-11
+0
+André Pessoa de Oliveira
+GPS
+2022-01-11
+0
+Renata Sofia Mouta Pinheiro
+SO UM
+2022-01-11
+1
+André Pessoa de Oliveira
+Programação Distribuída
+2022-01-11
+1

@@ -27,16 +27,16 @@
             </effect>
         </Label>
     </AnchorPane>
-    <AnchorPane fx:id="btn_voltar" prefHeight="400.0" prefWidth="417.0" style="-fx-background-color: D1B7ED;">
+    <AnchorPane prefHeight="400.0" prefWidth="417.0" style="-fx-background-color: D1B7ED;">
         <Pane layoutX="100.0" layoutY="48.0" prefHeight="293.0" prefWidth="210.0" style="-fx-background-color: FFFFFF; -fx-border-radius: 20 20 20 20;">
-            <Label layoutX="59.0" layoutY="14.0" text="Consulta" textAlignment="CENTER" textFill="#0e0e0e">
+            <Label layoutX="59.0" layoutY="14.0" text="Consulta" textAlignment="CENTER" textFill="#b57da9">
                 <font>
                     <Font size="24.0" />
                 </font>
             </Label>
-         <Label fx:id="label_reservas_encontradas" alignment="CENTER" layoutX="31.0" layoutY="49.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="148.0" text="Reservas encontradas: 6" textAlignment="CENTER" />
+         <Label fx:id="label_reservas_encontradas" alignment="CENTER" layoutX="31.0" layoutY="49.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="148.0" text="Reservas encontradas: 6" textAlignment="CENTER" textFill="#b57da9" />
          <Button fx:id="btn_voltaren" layoutX="59.0" layoutY="233.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: B96AF0;" text="Voltar" textAlignment="CENTER" textFill="WHITE" />
-         <ListView fx:id="consulta_list_view" layoutX="16.0" layoutY="80.0" prefHeight="141.0" prefWidth="178.0" style="-fx-background-color: EEEEEE;">
+         <ListView fx:id="consulta_list_view" layoutX="16.0" layoutY="80.0" prefHeight="141.0" prefWidth="178.0" style="-fx-background-color: CDADE3;">
             <opaqueInsets>
                <Insets />
             </opaqueInsets></ListView>

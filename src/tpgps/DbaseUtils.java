@@ -12,6 +12,7 @@ import tpgps.model.User;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -42,7 +43,7 @@ public class DbaseUtils {
             }else{
                 // salta para o MENU Scene
                 try {
-                    Parent root = FXMLLoader.load(DbaseUtils.class.getResource("views/menu.fxml"));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(DbaseUtils.class.getResource("views/menu.fxml")));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setTitle("Booking Masters");
                     stage.setScene(new Scene(root,600,400));
@@ -214,10 +215,10 @@ public class DbaseUtils {
 
             try {
                 FileWriter writer = new FileWriter("src/basesdados/reservas.txt",true);
-                writer.write( "\n" + novaRes.getNomeUser() + "\n");
+                writer.write(novaRes.getNomeUser() + "\n");
                 writer.write(novaRes.getDisciplinaUser()+ "\n");
                 writer.write(novaRes.getData()+ "\n");
-                writer.write(novaRes.getAtivo());
+                writer.write(novaRes.getAtivo()+"\n");
                 writer.close();
             } catch (IOException e) {
                 System.out.println("An error occurred writing to reservas.txt");

@@ -1,7 +1,5 @@
 package tpgps.model;
 
-import java.util.ArrayList;
-
 public class User {
 
     private String id;
@@ -18,7 +16,6 @@ public class User {
         this.nameUser = nameUser;
     }
 
-
     // GETS
     public String getId() { return id; }
     public String getEmail(){return email;}
@@ -29,7 +26,6 @@ public class User {
     public String getNameUser() {
         return nameUser;
     }
-
 
     // SETS
     public void setId(String id) { this.id = id; }

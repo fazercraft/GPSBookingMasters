@@ -18,6 +18,7 @@ import tpgps.model.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ConsultRevsController implements Initializable {
@@ -45,19 +46,18 @@ public class ConsultRevsController implements Initializable {
                 consulta_list_view.getItems().add(booked);
             }
         }
-
         label_reservas_encontradas.setText(String.valueOf(consulta_list_view.getItems().size()));
 
         btn_voltaren.setOnAction(event -> {
             Parent root = null;
             try {
-                root = FXMLLoader.load(DbaseUtils.class.getResource("views/menu.fxml"));
+                root = FXMLLoader.load(Objects.requireNonNull(DbaseUtils.class.getResource("views/menu.fxml")));
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Booking Masters");
-            stage.setScene(new Scene(root,600,400));
+            stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
             stage.show();
 
         } );

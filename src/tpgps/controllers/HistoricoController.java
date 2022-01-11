@@ -17,6 +17,7 @@ import tpgps.model.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class HistoricoController implements Initializable {
@@ -60,7 +61,7 @@ public class HistoricoController implements Initializable {
         btn_voltar.setOnAction(event -> {
             Parent root;
             try {
-                root = FXMLLoader.load(DbaseUtils.class.getResource("views/menu.fxml"));
+                root = FXMLLoader.load(Objects.requireNonNull(DbaseUtils.class.getResource("views/menu.fxml")));
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setTitle("Booking Masters");
                 stage.setScene(new Scene(root,600,400));
