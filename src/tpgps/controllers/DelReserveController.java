@@ -83,6 +83,8 @@ public class DelReserveController implements Initializable {
             stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
             stage.show();
         } );
+        btn_voltar.setOnMouseEntered(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #9069e0"));
+        btn_voltar.setOnMouseExited(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #B96AF0"));
 
         btn_remove.setOnAction(event -> {
             if(!disciplina.equalsIgnoreCase("empty")){
@@ -106,6 +108,8 @@ public class DelReserveController implements Initializable {
                 }
             }else{ alertaErro(); }
         } );
+        btn_remove.setOnMouseEntered(mouseEvent -> btn_remove.setStyle("-fx-background-color: #9069e0"));
+        btn_remove.setOnMouseExited(mouseEvent -> btn_remove.setStyle("-fx-background-color: #B96AF0"));
     }
 
     private void alertaErro() {

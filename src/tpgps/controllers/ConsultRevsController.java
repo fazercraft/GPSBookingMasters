@@ -61,5 +61,7 @@ public class ConsultRevsController implements Initializable {
             stage.show();
 
         } );
+        btn_voltaren.setOnMouseEntered(mouseEvent -> btn_voltaren.setStyle("-fx-background-color: #9069e0"));
+        btn_voltaren.setOnMouseExited(mouseEvent -> btn_voltaren.setStyle("-fx-background-color: #B96AF0"));
     }
 }

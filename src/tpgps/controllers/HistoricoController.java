@@ -55,9 +55,6 @@ public class HistoricoController implements Initializable {
 
 
 
-
-
-
         btn_voltar.setOnAction(event -> {
             Parent root;
             try {
@@ -70,6 +67,8 @@ public class HistoricoController implements Initializable {
                 exception.printStackTrace();
             }
         });
+        btn_voltar.setOnMouseEntered(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #9069e0"));
+        btn_voltar.setOnMouseExited(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #B96AF0"));
 
     }
 }

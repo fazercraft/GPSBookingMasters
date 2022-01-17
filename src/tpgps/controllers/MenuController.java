@@ -46,7 +46,7 @@ public class MenuController implements Initializable {
                stage.show();
 
            } );
-        btn_removeReserva.setOnAction(event -> {
+           btn_removeReserva.setOnAction(event -> {
             Parent root = null;
             try {
                 root = FXMLLoader.load(Objects.requireNonNull(DbaseUtils.class.getResource("views/removeseat.fxml")));
@@ -59,8 +59,7 @@ public class MenuController implements Initializable {
             stage.show();
 
         } );
-
-        btn_verReservas.setOnAction(event -> {
+           btn_verReservas.setOnAction(event -> {
             Parent root = null;
             try {
                 root = FXMLLoader.load(Objects.requireNonNull(DbaseUtils.class.getResource("views/consultrevs.fxml")));
@@ -73,9 +72,7 @@ public class MenuController implements Initializable {
             stage.show();
 
         } );
-
-
-        btn_historico.setOnAction(event -> {
+           btn_historico.setOnAction(event -> {
             Parent root = null;
             try {
                 root = FXMLLoader.load(Objects.requireNonNull(DbaseUtils.class.getResource("views/historico.fxml")));
@@ -90,7 +87,17 @@ public class MenuController implements Initializable {
         } );
 
 
+        btn_fazReserva.setOnMouseEntered(mouseEvent -> btn_fazReserva.setStyle("-fx-background-color: #9069e0"));
+        btn_fazReserva.setOnMouseExited(mouseEvent -> btn_fazReserva.setStyle("-fx-background-color: #B96AF0"));
 
+        btn_removeReserva.setOnMouseEntered(mouseEvent -> btn_removeReserva.setStyle("-fx-background-color: #9069e0"));
+        btn_removeReserva.setOnMouseExited(mouseEvent -> btn_removeReserva.setStyle("-fx-background-color: #B96AF0"));
+
+        btn_verReservas.setOnMouseEntered(mouseEvent -> btn_verReservas.setStyle("-fx-background-color: #9069e0"));
+        btn_verReservas.setOnMouseExited(mouseEvent -> btn_verReservas.setStyle("-fx-background-color: #B96AF0"));
+
+        btn_historico.setOnMouseEntered(mouseEvent -> btn_historico.setStyle("-fx-background-color: #9069e0"));
+        btn_historico.setOnMouseExited(mouseEvent -> btn_historico.setStyle("-fx-background-color: #B96AF0"));
 
 
     }

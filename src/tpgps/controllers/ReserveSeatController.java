@@ -86,6 +86,8 @@ public class ReserveSeatController implements Initializable {
                  exception.printStackTrace();
              }
          });
+        btn_voltar.setOnMouseEntered(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #9069e0"));
+        btn_voltar.setOnMouseExited(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #B96AF0"));
 
     }
     private void setImagesListeners(ArrayList<ImageView> listaViews) {

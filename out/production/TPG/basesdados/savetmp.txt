@@ -28,7 +28,7 @@ AM UM
 AM DOIS
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Álgebra Linear
+�?lgebra Linear
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 SO DOIS
@@ -98,7 +98,7 @@ Serviços de Rede dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Programação WEB
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
 Programação Distribuída
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
@@ -116,7 +116,7 @@ GPS
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
 Estruturas de Dados
-0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 
+
 
 Estratégia Organizacional
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
