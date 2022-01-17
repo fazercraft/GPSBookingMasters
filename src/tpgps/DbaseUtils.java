@@ -76,7 +76,6 @@ public class DbaseUtils {
                 // verificar
                 if(aluno.getEmail().equalsIgnoreCase(mail))
                     return aluno;
-
             }
             scan.close();
         } catch (IOException e) {
