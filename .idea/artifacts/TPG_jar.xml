@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="TPG:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/TPG_jar</output-path>
+    <output-path>$PROJECT_DIR$</output-path>
     <root id="archive" name="TPG.jar">
       <element id="module-output" name="TPG" />
       <element id="library" level="project" name="bin" />

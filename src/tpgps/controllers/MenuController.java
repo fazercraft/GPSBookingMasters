@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
 import tpgps.model.User;
@@ -24,6 +25,7 @@ public class MenuController implements Initializable {
     @FXML Button btn_verReservas;
     @FXML Button btn_historico;
     @FXML Label txt_nomeAl;
+    @FXML private Pane idtem;
 
     User alumni;
 
@@ -32,6 +34,11 @@ public class MenuController implements Initializable {
            alumni = DbaseUtils.getAlumni();
 
            txt_nomeAl.setText(alumni.getNumUser());
+
+
+        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
+                "    -fx-border-radius: 20 20 20 20;\n" +
+                "    -fx-background-color: #efe9e9;");
 
            btn_fazReserva.setOnAction(event -> {
                Parent root = null;

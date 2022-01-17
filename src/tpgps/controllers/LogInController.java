@@ -17,11 +17,14 @@ public class LogInController implements Initializable {
     @FXML private TextField txt_mail;
     @FXML private PasswordField txt_passAl;
     @FXML private Button btnLOGIN;
-    @FXML private Pane idpane;
+    @FXML private Pane idtem;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
+                "    -fx-border-radius: 20 20 20 20;\n" +
+                "    -fx-background-color: #efe9e9;");
 
         // BTN LOGIN
         btnLOGIN.setOnAction(event -> DbaseUtils.logInUser(event,txt_mail.getText(),txt_passAl.getText()));

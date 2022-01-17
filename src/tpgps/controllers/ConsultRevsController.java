@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
 import tpgps.model.Reserva;
@@ -29,7 +30,7 @@ public class ConsultRevsController implements Initializable {
     ListView<String> consulta_list_view;
     @FXML
     Label label_reservas_encontradas;
-
+    @FXML private Pane idtem;
     User alumni;
     ArrayList<Reserva> reservas;
 
@@ -38,6 +39,10 @@ public class ConsultRevsController implements Initializable {
 
         alumni = DbaseUtils.getAlumni();
         reservas=DbaseUtils.getReservas();
+
+        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
+                "    -fx-border-radius: 20 20 20 20;\n" +
+                "    -fx-background-color: #efe9e9;");
 
 
         for (Reserva res: reservas) {

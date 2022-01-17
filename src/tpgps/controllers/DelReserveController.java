@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
 import tpgps.model.Reserva;
@@ -22,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class DelReserveController implements Initializable {
 
-
+    @FXML private Pane idtem;
     @FXML
     Button btn_voltar;
 
@@ -42,6 +43,10 @@ public class DelReserveController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
+                "    -fx-border-radius: 20 20 20 20;\n" +
+                "    -fx-background-color: #efe9e9;");
 
         alumni = DbaseUtils.getAlumni();
         reservas = DbaseUtils.getReservas();

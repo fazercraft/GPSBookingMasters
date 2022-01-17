@@ -10,10 +10,10 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tpgps.controllers.LogInController">
    <AnchorPane prefHeight="200.0" prefWidth="200.0">
-      <ImageView fitHeight="400.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+      <ImageView fitHeight="400.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true">
          <Image url="@../../resources/bk.jpg" />
          <cursor>
-            <Cursor fx:constant="DEFAULT" />
+            <Cursor fx:constant="N_RESIZE" />
          </cursor>
       </ImageView>
       <ImageView blendMode="MULTIPLY" fitHeight="108.0" fitWidth="168.0" layoutX="32.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
@@ -32,7 +32,7 @@
       </Label>
    </AnchorPane>
    <AnchorPane fx:id="idpane" prefHeight="400.0" prefWidth="417.0" style="-fx-background-color: D1B7ED;">
-      <Pane layoutX="100.0" layoutY="48.0" prefHeight="293.0" prefWidth="210.0" style="-fx-background-color: ffffff;">
+      <Pane fx:id="idtem" layoutX="100.0" layoutY="48.0" prefHeight="293.0" prefWidth="210.0" style="-fx-background-color: ffffff;">
          <PasswordField id="txt_passAl" fx:id="txt_passAl" layoutX="30.0" layoutY="158.0" prefHeight="35.0" prefWidth="150.0" promptText="Password" style="-fx-background-color: ECD8D2;">
             <effect>
                <InnerShadow blurType="ONE_PASS_BOX" height="16.23" radius="7.727499999999999" width="16.68" />

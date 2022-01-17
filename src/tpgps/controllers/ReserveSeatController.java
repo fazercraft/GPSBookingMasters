@@ -12,6 +12,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import tpgps.DbaseUtils;
 import tpgps.model.Reserva;
@@ -35,6 +36,7 @@ public class ReserveSeatController implements Initializable {
 
     @FXML ChoiceBox<String> idChooser;
     @FXML Button btn_voltar;
+    @FXML private Pane idtem;
 
     @FXML ImageView l1; @FXML ImageView l2; @FXML ImageView l3; @FXML ImageView l4; @FXML ImageView l5;
     @FXML ImageView l6; @FXML ImageView l7; @FXML ImageView l8; @FXML ImageView l9; @FXML ImageView l10;
@@ -47,6 +49,10 @@ public class ReserveSeatController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
+                "    -fx-border-radius: 20 20 20 20;\n" +
+                "    -fx-background-color: #efe9e9;");
+
         listaLugares = new ArrayList<>();
         listaViews = new ArrayList<>();
 
