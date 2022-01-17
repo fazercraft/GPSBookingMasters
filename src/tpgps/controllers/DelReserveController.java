@@ -88,7 +88,7 @@ public class DelReserveController implements Initializable {
             if(!disciplina.equalsIgnoreCase("empty")){
                 // atualizar reservas -> deixa de estar ativa
                 Optional<ButtonType> result  = alertaConfimacao();
-                if(result.isEmpty() || result.get() == ButtonType.OK){
+                if(!result.isPresent() || result.get() == ButtonType.OK){
                     label_reserva.setVisible(false);
                     for(Reserva res : reservas){
                         if(res.getNomeUser().equalsIgnoreCase(resActiva.getNomeUser()) &&

@@ -101,7 +101,7 @@ public class ReserveSeatController implements Initializable {
         alert.setTitle("Confirme");
         alert.setContentText("Tem a certeza de que deseja reservar lugar?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.isEmpty() || result.get() == ButtonType.OK) {
+        if(!result.isPresent() || result.get() == ButtonType.OK) {
             listaLugares.set(pos, alumni.getId());
             DbaseUtils.reservaLugar(disciplina,listaLugares);
             Reserva novaRes = new Reserva(alumni.getNameUser(),disciplina,java.time.LocalDate.now().toString(),"1");
