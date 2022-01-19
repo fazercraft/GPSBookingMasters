@@ -1,5 +1,6 @@
 package tpgps.controllers;
 
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -7,8 +8,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tpgps.DbaseUtils;
 import tpgps.model.Reserva;
 import tpgps.model.User;
@@ -23,17 +26,12 @@ import java.util.ResourceBundle;
 
 public class DelReserveController implements Initializable {
 
-    @FXML private Pane idtem;
-    @FXML
-    Button btn_voltar;
-
-    @FXML
-    Label label_reserva;
-
-    @FXML
-    ChoiceBox<String> chooser_id;
-
+    @FXML Pane idtem;
+    @FXML Button btn_voltar;
+    @FXML Label label_reserva;
+    @FXML ChoiceBox<String> chooser_id;
     @FXML Button btn_remove;
+    @FXML ImageView idIMG;
 
     User alumni;
     ArrayList<Reserva> reservas;
@@ -44,9 +42,7 @@ public class DelReserveController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
-                "    -fx-border-radius: 20 20 20 20;\n" +
-                "    -fx-background-color: #efe9e9;");
+        styleNanimes();
 
         alumni = DbaseUtils.getAlumni();
         reservas = DbaseUtils.getReservas();
@@ -74,8 +70,6 @@ public class DelReserveController implements Initializable {
                 }
             }
         });
-
-
         btn_voltar.setOnAction(event -> {
             Parent root = null;
             try {
@@ -88,9 +82,6 @@ public class DelReserveController implements Initializable {
             stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
             stage.show();
         } );
-        btn_voltar.setOnMouseEntered(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #9069e0"));
-        btn_voltar.setOnMouseExited(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #B96AF0"));
-
         btn_remove.setOnAction(event -> {
             if(!disciplina.equalsIgnoreCase("empty")){
                 // atualizar reservas -> deixa de estar ativa
@@ -113,10 +104,26 @@ public class DelReserveController implements Initializable {
                 }
             }else{ alertaErro(); }
         } );
-        btn_remove.setOnMouseEntered(mouseEvent -> btn_remove.setStyle("-fx-background-color: #9069e0"));
-        btn_remove.setOnMouseExited(mouseEvent -> btn_remove.setStyle("-fx-background-color: #B96AF0"));
+
     }
 
+    private void styleNanimes() {
+        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
+                "    -fx-border-radius: 20 20 20 20;\n" +
+                "    -fx-background-color: #efe9e9;");
+
+        FadeTransition trans = new FadeTransition(Duration.seconds(1), idIMG);
+        trans.setFromValue(1.0);
+        trans.setToValue(0.5);
+        trans.setCycleCount(FadeTransition.INDEFINITE);
+        trans.setAutoReverse(true);
+        trans.play();
+
+        btn_remove.setOnMouseEntered(mouseEvent -> btn_remove.setStyle("-fx-background-color: #9069e0"));
+        btn_remove.setOnMouseExited(mouseEvent -> btn_remove.setStyle("-fx-background-color: #B96AF0"));
+        btn_voltar.setOnMouseEntered(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #9069e0"));
+        btn_voltar.setOnMouseExited(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #B96AF0"));
+    }
     private void alertaErro() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Reserva inválida");

@@ -1,5 +1,6 @@
 package tpgps.controllers;
 
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import tpgps.DbaseUtils;
 import tpgps.model.Reserva;
 import tpgps.model.User;
@@ -36,12 +38,15 @@ public class ReserveSeatController implements Initializable {
 
     @FXML ChoiceBox<String> idChooser;
     @FXML Button btn_voltar;
-    @FXML private Pane idtem;
+    @FXML Pane idtem;
+    @FXML ImageView idIMG;
 
     @FXML ImageView l1; @FXML ImageView l2; @FXML ImageView l3; @FXML ImageView l4; @FXML ImageView l5;
     @FXML ImageView l6; @FXML ImageView l7; @FXML ImageView l8; @FXML ImageView l9; @FXML ImageView l10;
     @FXML ImageView l11; @FXML ImageView l12; @FXML ImageView l13; @FXML ImageView l14; @FXML ImageView l15;
     @FXML ImageView l16; @FXML ImageView l17; @FXML ImageView l18; @FXML ImageView l19; @FXML ImageView l20;
+
+
 
     ArrayList<ImageView> listaViews;
     ArrayList<String> listaLugares;
@@ -49,9 +54,8 @@ public class ReserveSeatController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
-                "    -fx-border-radius: 20 20 20 20;\n" +
-                "    -fx-background-color: #efe9e9;");
+
+        styleNanimes();
 
         listaLugares = new ArrayList<>();
         listaViews = new ArrayList<>();
@@ -66,7 +70,6 @@ public class ReserveSeatController implements Initializable {
 
         //DEBUG
         System.out.println(alumni.toString());
-
 
         ArrayList<String> listaDisciplinas = DbaseUtils.getDisciplinas();
         for (String str : listaDisciplinas)
@@ -92,10 +95,26 @@ public class ReserveSeatController implements Initializable {
                  exception.printStackTrace();
              }
          });
-        btn_voltar.setOnMouseEntered(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #9069e0"));
-        btn_voltar.setOnMouseExited(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #B96AF0"));
 
     }
+
+    private void styleNanimes() {
+        idtem.setStyle("-fx-background-radius: 20 20 20 20;\n" +
+                "    -fx-border-radius: 20 20 20 20;\n" +
+                "    -fx-background-color: #efe9e9;");
+
+
+        FadeTransition trans = new FadeTransition(Duration.seconds(1), idIMG);
+        trans.setFromValue(1.0);
+        trans.setToValue(0.5);
+        trans.setCycleCount(FadeTransition.INDEFINITE);
+        trans.setAutoReverse(true);
+        trans.play();
+
+        btn_voltar.setOnMouseEntered(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #9069e0"));
+        btn_voltar.setOnMouseExited(mouseEvent -> btn_voltar.setStyle("-fx-background-color: #B96AF0"));
+    }
+
     private void setImagesListeners(ArrayList<ImageView> listaViews) {
         for(int i = 0;i<20;i++){
             int finalI = i;

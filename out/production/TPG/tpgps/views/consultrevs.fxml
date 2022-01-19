@@ -12,7 +12,7 @@
         <ImageView fitHeight="400.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" smooth="false">
             <Image url="@../../resources/bk.jpg" />
         </ImageView>
-        <ImageView blendMode="MULTIPLY" fitHeight="119.0" fitWidth="161.0" layoutX="35.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="idIMG" blendMode="MULTIPLY" fitHeight="119.0" fitWidth="161.0" layoutX="35.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                 <DropShadow />
             </effect>

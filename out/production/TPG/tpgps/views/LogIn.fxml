@@ -16,7 +16,7 @@
             <Cursor fx:constant="N_RESIZE" />
          </cursor>
       </ImageView>
-      <ImageView blendMode="MULTIPLY" fitHeight="108.0" fitWidth="168.0" layoutX="32.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="idIMG" blendMode="MULTIPLY" fitHeight="108.0" fitWidth="168.0" layoutX="32.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <effect>
             <DropShadow />
          </effect>
