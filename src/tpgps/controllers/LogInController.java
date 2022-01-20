@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.transform.Scale;
 import javafx.util.Duration;
 import tpgps.DbaseUtils;
 import java.net.URL;
@@ -23,8 +24,9 @@ public class LogInController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       styleNanimes();
-       setActions();
+
+        styleNanimes();
+        setActions();
     }
 
     private void setActions() {
