@@ -19,10 +19,11 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/LogIn.fxml")));
 
 
-
         primaryStage.setTitle("BookingMasters");
         primaryStage.setResizable(true);
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setMinHeight(600);
+        primaryStage.setMinWidth(800);
         primaryStage.show();
 
     }

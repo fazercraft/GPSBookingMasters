@@ -61,7 +61,7 @@ public class ConsultRevsController implements Initializable {
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Booking Masters");
-            stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
+            stage.setScene(new Scene(Objects.requireNonNull(root),800,600));
             stage.show();
 
         } );

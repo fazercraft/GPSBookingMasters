@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tpgps.controllers.HistoricoController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tpgps.controllers.HistoricoController">
     <AnchorPane prefHeight="200.0" prefWidth="200.0">
-        <ImageView fitHeight="400.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+        <ImageView fitHeight="600.0" fitWidth="250.0" pickOnBounds="true" smooth="false">
             <Image url="@../../resources/bk.jpg" />
         </ImageView>
-        <ImageView fx:id="idIMG" blendMode="MULTIPLY" fitHeight="119.0" fitWidth="161.0" layoutX="35.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="idIMG" blendMode="MULTIPLY" fitHeight="119.0" fitWidth="161.0" layoutX="44.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                 <DropShadow />
             </effect>
             <Image url="@../../resources/logo.jpg" />
         </ImageView>
-        <Label layoutX="27.0" layoutY="205.0" text="Booking Masters" textFill="#ede5e5">
+        <Label layoutX="36.0" layoutY="348.0" text="Booking Masters" textFill="#ede5e5">
             <font>
                 <Font size="24.0" />
             </font>
@@ -27,19 +27,22 @@
             </effect>
         </Label>
     </AnchorPane>
-    <AnchorPane prefHeight="400.0" prefWidth="417.0" style="-fx-background-color: D1B7ED;">
-        <Pane fx:id="idtem" layoutX="100.0" layoutY="48.0" prefHeight="293.0" prefWidth="210.0" style="-fx-background-color: ffffff; -fx-border-radius: 20 20 20 20 ;">
-            <Label layoutX="59.0" layoutY="35.0" text="Histórico" textAlignment="CENTER" textFill="#0e0e0e">
+    <AnchorPane prefHeight="600.0" prefWidth="551.0" style="-fx-background-color: D1B7ED;">
+        <Pane fx:id="idtem" layoutX="100.0" layoutY="50.0" prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: ffffff; -fx-border-radius: 20 20 20 20 ;">
+            <Label layoutX="104.0" layoutY="36.0" text="Histórico" textAlignment="CENTER" textFill="#b57da9">
                 <font>
-                    <Font size="24.0" />
+                    <Font size="36.0" />
                 </font>
             </Label>
-            <Label fx:id="label_reservas_encontradas" alignment="CENTER" layoutX="31.0" layoutY="70.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="148.0" text="Reservas encontradas: x" textAlignment="CENTER" />
-         <ListView fx:id="list_view_id" editable="true" layoutX="9.0" layoutY="99.0" prefHeight="120.0" prefWidth="194.0" style="-fx-background-color: e4ede0;">
+            <Label fx:id="label_reservas_encontradas" alignment="CENTER" layoutX="73.0" layoutY="109.0" lineSpacing="2.0" prefHeight="20.0" prefWidth="205.0" text="Reservas encontradas: x" textAlignment="CENTER" textFill="#b57da9">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
+         <ListView fx:id="list_view_id" editable="true" layoutX="38.0" layoutY="165.0" prefHeight="211.0" prefWidth="275.0" style="-fx-background-color: e4ede0;">
             <padding>
                <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
             </padding></ListView>
-         <Button fx:id="btn_voltar" layoutX="49.0" layoutY="238.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: B96AF0;" text="VOLTAR" textFill="#ffffff" />
+         <Button fx:id="btn_voltar" layoutX="43.0" layoutY="402.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="275.0" style="-fx-background-color: B96AF0;" text="VOLTAR" textFill="#ffffff" />
         </Pane>
     </AnchorPane>
 </HBox>

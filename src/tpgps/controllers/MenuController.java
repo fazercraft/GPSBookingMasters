@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Scale;
@@ -34,12 +35,13 @@ public class MenuController implements Initializable {
     @FXML Pane idtem;
     @FXML ImageView idIMG;
     @FXML ImageView idIMG2;
+    @FXML
+    HBox cena;
 
     User alumni;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
 
            alumni = DbaseUtils.getAlumni();
            styleNanimes();
@@ -90,7 +92,7 @@ public class MenuController implements Initializable {
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Booking Masters");
-            stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
+            stage.setScene(new Scene(Objects.requireNonNull(root),800,600));
             stage.show();
 
         } );
@@ -103,7 +105,7 @@ public class MenuController implements Initializable {
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Booking Masters");
-            stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
+            stage.setScene(new Scene(Objects.requireNonNull(root),800,600));
             stage.show();
 
         } );
@@ -116,7 +118,7 @@ public class MenuController implements Initializable {
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Booking Masters");
-            stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
+            stage.setScene(new Scene(Objects.requireNonNull(root),800,600));
             stage.show();
 
         } );
@@ -129,7 +131,7 @@ public class MenuController implements Initializable {
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Booking Masters");
-            stage.setScene(new Scene(Objects.requireNonNull(root),600,400));
+            stage.setScene(new Scene(Objects.requireNonNull(root),800,600));
             stage.show();
 
         } );
