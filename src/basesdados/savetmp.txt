@@ -7,19 +7,19 @@ TAC
 Sistemas Digitais
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Programação
+Programacao
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Métodos Estatísticos
+Metodos Estatisticos
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 IP
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
-Gestão
+Gestao
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Electrónica
+Electronica
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 AM UM
@@ -35,30 +35,30 @@ SO DOIS
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 SO UM
-0 0 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
-Sis. Informação um
+Sis. Informacao um
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Serviços de Rede um
+Servicos de Rede um
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Serviços de Rede dois
+Servicos de Rede dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Segurança
+Seguranca
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 POO
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Prog. Avançada
+Prog. Avancada
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Modelação e Design
+Modelacao e Design
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Investigação Operacional
+Investigacao Operacional
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 IRC
@@ -67,16 +67,16 @@ IRC
 IIA
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Integração de Dados
+Integracao de Dados
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Encaminhamento de Dados
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Empreendedorismo e Inovação
+Empreendedorismo e Inovacao
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Conhecimento e Raciocínio
+Conhecimento e Raciocinio
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Cablagem Estruturada
@@ -88,41 +88,41 @@ Base de Dados
 Arq. Admim. Bases de Dados
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Tecnologias de Ligação
+Tecnologias de Ligacao
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Sis. Informação dois
+Sis. Informacao dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Serviços de Rede dois
+Servicos de Rede dois
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Programação WEB
+Programacao WEB
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+Programacao Distribuida
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
-Programação Distribuída
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-
-Métodos Otimização
+Metodos Otimizacao
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Inteligência Computacional
+Inteligencia Computacional
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Gestão de Redes
+Gestao de Redes
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 GPS
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
 Estruturas de Dados
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
-Estratégia Organizacional
+Estrategia Organizacional
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 Disponibilidade e Desempenho
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
-Arquitecturas Móveis
+Arquitecturas Moveis
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
