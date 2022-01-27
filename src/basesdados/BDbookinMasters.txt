@@ -3,7 +3,7 @@ Arquitecturas Moveis
 GPS
 SO UM
 Programacao Distribuida
-Programação WEB
+Programacao WEB
 Estruturas de Dados
 fim
 
@@ -12,7 +12,7 @@ Arquitecturas Moveis
 GPS
 SO UM
 Programacao Distribuida
-Programação WEB
+Programacao WEB
 Estruturas de Dados
 fim
 
@@ -21,7 +21,7 @@ Arquitecturas Moveis
 GPS
 SO UM
 Programacao Distribuida
-Programação WEB
+Programacao WEB
 Estruturas de Dados
 fim
 
@@ -30,7 +30,7 @@ Arquitecturas Moveis
 GPS
 SO UM
 Programacao Distribuida
-Programação WEB
+Programacao WEB
 Estruturas de Dados
 fim
 
@@ -39,7 +39,7 @@ Arquitecturas Moveis
 GPS
 SO UM
 Programacao Distribuida
-Programação WEB
+Programacao WEB
 Estruturas de Dados
 fim
 

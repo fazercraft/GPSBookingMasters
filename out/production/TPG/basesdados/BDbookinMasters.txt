@@ -1,45 +1,45 @@
 1
-Arquitecturas Móveis
+Arquitecturas Moveis
 GPS
 SO UM
-Programação Distribuída
-Programação WEB
+Programacao Distribuida
+Programacao WEB
 Estruturas de Dados
 fim
 
 2
-Arquitecturas Móveis
+Arquitecturas Moveis
 GPS
 SO UM
-Programação Distribuída
-Programação WEB
+Programacao Distribuida
+Programacao WEB
 Estruturas de Dados
 fim
 
 3
-Arquitecturas Móveis
+Arquitecturas Moveis
 GPS
 SO UM
-Programação Distribuída
-Programação WEB
+Programacao Distribuida
+Programacao WEB
 Estruturas de Dados
 fim
 
 4
-Arquitecturas Móveis
+Arquitecturas Moveis
 GPS
 SO UM
-Programação Distribuída
-Programação WEB
+Programacao Distribuida
+Programacao WEB
 Estruturas de Dados
 fim
 
 5
-Arquitecturas Móveis
+Arquitecturas Moveis
 GPS
 SO UM
-Programação Distribuída
-Programação WEB
+Programacao Distribuida
+Programacao WEB
 Estruturas de Dados
 fim
 
